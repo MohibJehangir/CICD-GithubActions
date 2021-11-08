@@ -18,7 +18,7 @@ spec:
       containers:
       - image: local/example:latest
         imagePullPolicy: never
-        name: java-test
+        name: example
 
 ---
 apiVersion: v1
