@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: java-springboot
+  name: java-deploy
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-springboot
+  template:
+    metadata:
+      labels:
+        app: java-springboot
+    spec:
+      containers:
+      - image: mohibjehangir/java-test:1.0.0
+        imagePullPolicy: never
+        name: java-test
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: java-springboot
+  name: java-svc
+  namespace: default
+spec:
+  ports:
+  - nodePort: 30365
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: java-springboot
+  type: NodePort
