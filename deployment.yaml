@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: java-springboot
-  name: java-deploy
+  name: example
   namespace: default
 spec:
   replicas: 1
@@ -26,7 +26,7 @@ kind: Service
 metadata:
   labels:
     app: java-springboot
-  name: java-svc
+  name: example
   namespace: default
 spec:
   ports:
