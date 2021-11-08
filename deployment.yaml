@@ -16,7 +16,7 @@ spec:
         app: java-springboot
     spec:
       containers:
-      - image: mohibjehangir/java-test:1.0.0
+      - image: local/example:latest
         imagePullPolicy: never
         name: java-test
 
