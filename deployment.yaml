@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - image: mohibjehangir/java-test:1.0.0
-        imagePullPolicy: never
+        imagePullPolicy: IfNotPresent
         name: java-test
 
 ---
